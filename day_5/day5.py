@@ -24,11 +24,9 @@ def solution(crates, part_2=False):
         num = int(num)
         source = int(source) - 1
         destination = int(destination) - 1
-        crates_to_move = crates[source][-num:]
-        if part_2:
-            moving = list(crates_to_move)
-        else:
-            moving = list(reversed(crates_to_move))
+        moving = crates[source][-num:]
+        if not part_2:
+            moving = list(reversed(moving))
         crates[destination].extend(moving)
         del crates[source][-num:]
 
