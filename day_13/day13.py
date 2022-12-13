@@ -41,7 +41,7 @@ def divider_index(packets, target):
     # locations of any other packet. Thus, compare the divider target to each
     # other packet and see where it should go. Use sum to count number of
     # packets that we iterated through to find the correct index.
-    # Another option is to use `sorted` with `key=itertools.cmp_to_key(compare)`
+    # Another option is to use `sorted` with `key=functools.cmp_to_key(compare)`
     # and then find the index of the divider packets in the sorted list.
     return sum(compare(packet, target) <= 0 for packet in packets)
 
